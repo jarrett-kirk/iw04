@@ -1,23 +1,23 @@
 <div class="header">
     <button id="logo" class="logo-button top-left">LFSR</button>
     <button id="home" class="button-header">Home</button>
-    <button id="applications" class="button-header">Visualization</button>
-    <button id="profile-btn" class="button-header">Coding Module</button>
+    <button id="visualization" class="button-header">Visualization</button>
+    <button id="coding" class="button-header">Coding Module</button>
 </div>
   
 <script>
 document.getElementById("logo").addEventListener("click", function () {
-    window.location.href = "/student-search";
+    window.location.href = "/";
 });
 document.getElementById("home").addEventListener("click", function () {
     window.location.href = "/";
 });
 document
-    .getElementById("applications")
+    .getElementById("visualization")
     .addEventListener("click", function () {
-    window.location.href = "/applications-view";
+    window.location.href = "/visualization";
     });
-document.getElementById("profile-btn").addEventListener("click", function () {
-    window.location.href = "/profile-view";
+document.getElementById("coding").addEventListener("click", function () {
+    window.location.href = "/coding";
 });
 </script>
