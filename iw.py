@@ -33,7 +33,7 @@ def visual():
 
 #-----------------------------------------------------------------------
 
-@app.route('/coding', methods=['GET'])
+@app.route('/code', methods=['GET'])
 def coding():
 
     html_code = flask.render_template('code.html')
