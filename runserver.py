@@ -6,7 +6,7 @@
 #-----------------------------------------------------------------------
 
 import sys
-import fight
+import iw
 
 # -----------------------------------------------------------------------
 
@@ -23,7 +23,7 @@ def main():
         sys.exit(1)
 
     try:
-        fight.app.run(host='0.0.0.0', port=port, debug=True)
+        iw.app.run(host='0.0.0.0', port=port, debug=True)
     except Exception as ex:
         print(ex, file=sys.stderr)
         sys.exit(1)

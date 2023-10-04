@@ -1,24 +1,23 @@
-<div>
-    <link   
-    rel="stylesheet"
-    type="text/css"
-    href="{{ url_for('static', filename='stylesheets/main.css') }}"
-    />
-    <div class="navbar-container">
-      <div class="navbar-navbar">
-        <span class="navbar-text"><span>LFSR</span></span>
-        <button class="navbar-navbarbuttons">
-          <button class="navbar-homebutton">
-            <span class="navbar-text2"><span>HOME</span></span>
-          </button>
-          <button class="navbar-visualizationbutton">
-            <span class="navbar-text4"><span>VISUALIZATION</span></span>
-          </button>
-          <button class="navbar-codingmodulebutton">
-            <span class="navbar-text6"><span>CODING MODULE</span></span>
-          </button>
-        </button>
-      </div>
-    </div>
-  </div>
+<div class="header">
+    <button id="logo" class="logo-button top-left">LFSR</button>
+    <button id="home" class="button-header">Home</button>
+    <button id="applications" class="button-header">Visualization</button>
+    <button id="profile-btn" class="button-header">Coding Module</button>
+</div>
   
+<script>
+document.getElementById("logo").addEventListener("click", function () {
+    window.location.href = "/student-search";
+});
+document.getElementById("home").addEventListener("click", function () {
+    window.location.href = "/";
+});
+document
+    .getElementById("applications")
+    .addEventListener("click", function () {
+    window.location.href = "/applications-view";
+    });
+document.getElementById("profile-btn").addEventListener("click", function () {
+    window.location.href = "/profile-view";
+});
+</script>
