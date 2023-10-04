@@ -1,3 +1,7 @@
+:root {
+    background: yellow;
+}
+
 .header {
     position: relative;
     top: 0px;
@@ -8,29 +12,22 @@
     flex-direction: row;
     justify-content: end;
     align-items: center;
-}
-
-.header > button {
-    height: 100%;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
-    font-family: "Outfit";
-    font-weight: bold;
-}
-
-button {
-    cursor: pointer;
-    box-shadow: 5px 5px 5px var(--light-gray);
+    background: #2B2929;
 }
 
 .button-header {
+    background-color: #4CAF50; /* Green */
     border: none;
-    background-color: #0000;
-    font-size: large;
-    color: var(--med-gray);
-    transition: all 300ms ease;
-    box-shadow: none;
-}
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+  }
 
 .logo-button {
     background-image: linear-gradient(
@@ -51,22 +48,3 @@ button {
     position: absolute;
     left: 0;
 }
-
-.banner {
-    background-image: linear-gradient(
-      160deg,
-      var(--primary-800),
-      var(--primary-500)
-    );
-    height: 150px;
-    /* width: 100%; */
-    color: white;
-    margin-top: 40px;
-    line-height: 150px;
-    font-size: 6rem;
-    padding-left: 4rem;
-    padding-right: 4rem;
-    font-family: "Outfit";
-    font-weight: 900;
-}
-  
