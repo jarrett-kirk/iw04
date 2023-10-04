@@ -7,6 +7,7 @@
 
 import flask
 import database
+import lfsr
 
 #-----------------------------------------------------------------------
 
@@ -39,3 +40,4 @@ def coding():
     html_code = flask.render_template('code.html')
     response = flask.make_response(html_code)
     return response
+
