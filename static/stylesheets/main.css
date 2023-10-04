@@ -1,0 +1,94 @@
+.navbar-container {
+    width: 100%;
+    display: flex;
+    overflow: auto;
+    min-height: 100vh;
+    align-items: center;
+    flex-direction: column;
+  }
+  .navbar-navbar {
+    gap: 493px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    background-color: rgba(42, 40, 40, 1);
+  }
+  .navbar-text {
+    color: rgba(188, 11, 11, 1);
+    width: 399px;
+    height: auto;
+    font-size: 96px;
+    font-style: Bold;
+    text-align: center;
+    font-family: JetBrains Mono;
+    font-weight: 700;
+    line-height: 28px;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .navbar-navbarbuttons {
+    display: flex;
+    align-items: flex-start;
+  }
+  .navbar-homebutton {
+    gap: 10px;
+    display: flex;
+    padding: 20px 30px;
+    align-items: center;
+    border-radius: 4px;
+    justify-content: center;
+  }
+  .navbar-text2 {
+    color: rgba(152, 150, 150, 1);
+    height: auto;
+    font-size: 20px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Istok Web;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .navbar-visualizationbutton {
+    gap: 10px;
+    display: flex;
+    padding: 20px 30px;
+    align-items: center;
+    border-radius: 4px;
+    justify-content: center;
+  }
+  .navbar-text4 {
+    color: rgba(152, 150, 150, 1);
+    height: auto;
+    font-size: 20px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Istok Web;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  .navbar-codingmodulebutton {
+    gap: 10px;
+    display: flex;
+    padding: 20px 30px;
+    align-items: center;
+    border-radius: 4px;
+    justify-content: center;
+  }
+  .navbar-text6 {
+    color: rgba(152, 150, 150, 1);
+    height: auto;
+    font-size: 20px;
+    font-style: Regular;
+    text-align: left;
+    font-family: Istok Web;
+    font-weight: 400;
+    line-height: normal;
+    font-stretch: normal;
+    text-decoration: none;
+  }
+  
