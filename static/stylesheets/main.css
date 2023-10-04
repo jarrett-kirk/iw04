@@ -2,6 +2,12 @@
     background: 1E1E1E;
 }
 
+body {
+    display: block;
+    margin: 0px;
+}
+
+
 .header {
     position: relative;
     top: 0px;
