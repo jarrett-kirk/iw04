@@ -12,9 +12,7 @@ from pylfsr import LFSR
 #-----------------------------------------------------------------------
 
 def main():
-    state = []
-    for arg in sys.argv[1:]:
-        state.append(int(arg))
+    state = [1, 0, 1]
     fpoly = [3,2]
     print(state)
     print(fpoly)

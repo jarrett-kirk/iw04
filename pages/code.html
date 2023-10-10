@@ -1,18 +1,37 @@
-<!DOCTYPE html>
-<html>
-    <head>
+<!DOCTYPE html> 
+<html> 
+    <head> 
+        <meta charset='utf-8'> 
+        <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+        <meta name='viewport' content='width=device-width, initial-scale=1'> 
+
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.css" />
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/theme/monokai.min.css" />
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.52.2/codemirror.min.js">
+        </script>
+
         <link
-            rel="stylesheet"
-            type="text/css"
-            href="{{ url_for('static', filename='stylesheets/main.css') }}"
+                rel="stylesheet"
+                type="text/css"
+                href="{{ url_for('static', filename='stylesheets/main.css') }}"
         />
-        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    </head>
-    <body>
-    {% include "./header.html" %}
-    <br>
-    <br>
-    <div style="padding-left:16px; color: white;">
-        <h2>Coding Module Page</h2>
-    </div>
-    </body>
+    </head> 
+
+    <body> 
+        {% include "./header.html" %}
+        <div class="container">
+            <div class="text-coding"> 
+                <h1>Coding a LFSR in Python</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <div><textarea id="code" name="code"></textarea> 
+            </div>
+        </div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/python/python.js"></script>
+        <script src='./static/script/main.js'></script> 
+    </body> 
+</html>

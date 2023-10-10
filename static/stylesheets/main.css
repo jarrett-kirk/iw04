@@ -8,6 +8,8 @@ body {
 }
 
 .topnav {
+  display: flex;
+  align-items: center;
   overflow: hidden;
   background-color: #333;
 }
@@ -27,13 +29,32 @@ body {
 }
 
 .topnav a.logo {
-  color: #BC0C0C;
+  color: #f93838;
   font-size: 50px;
   font-style: normal;
   font-weight: 700;
   float: left;
+  flex-grow: 1;
 }
 
 .topnav a.logo:hover {
   background-color: #333;
+}
+
+.container {
+  display: flex;
+  overflow: hidden;
+  background-color: #333;
+  justify-content: space-evenly;
+}
+
+.text-coding {
+  color: white;
+  text-align: left;
+  vertical-align: top;
+}
+
+.CodeMirror {
+  border: 1px solid #eee;
+  height: auto;
 }
