@@ -44,7 +44,7 @@ body {
 .container {
   display: flex;
   overflow: hidden;
-  background-color: #333;
+  background-color: #222;
   justify-content: space-evenly;
 }
 
