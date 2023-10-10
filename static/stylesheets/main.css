@@ -45,16 +45,18 @@ body {
   display: flex;
   overflow: hidden;
   background-color: #222;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 .text-coding {
   color: white;
   text-align: left;
   vertical-align: top;
+  padding: 30px 30px;
 }
 
 .CodeMirror {
   border: 1px solid #eee;
   height: auto;
+  padding: 30px 30px;
 }

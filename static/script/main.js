@@ -29,7 +29,7 @@ class LFSR():
 # and bits located at taps before the shift.
    
     def step(self):
-      
+
 # Generate a k-bit pseudorandom number using the register.
     def rand(self, k):
 
@@ -41,19 +41,19 @@ class LFSR():
 
 # A demo of the LFSR's functionality.
 def main():
-   
+
    # create a new register with initial state 01101000010 and tap at position 8
    register = LFSR(fill=[0,1,1,0,1,0,0,0,0,1,0], taps=[8])
 
    # advance the register 3 steps
    for i in range(3):
-      register.step()
-      print("Step {}\n{}".format(i+1, register))
+        register.step()
+        print("Step {}\n{}".format(i+1, register))
 
    # generate a couple of pseudorandom numbers
    print("Pseudorandom numbers:")
    for _ in range(3):
-      print(register.rand(8))
+        print(register.rand(8))
 
 #-----------------------------------------------------------------------
 
