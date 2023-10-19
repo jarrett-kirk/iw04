@@ -60,3 +60,30 @@ body {
   height: auto;
   padding: 30px 30px;
 }
+
+.canvas-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px 30px;
+}
+
+.lfsr {
+  padding: 30px 30px;
+}
+
+.bits {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.taps {
+  display: flex;
+  overflow: hidden;
+  justify-content: space-between;
+}
+
+.bit-button {
+  text-decoration: none;
+  font-size: 24px;
+}

@@ -9,10 +9,32 @@
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
     </head>
     {% include "./header.html" %}
-    <br>
-    <br>
-    <div style="padding-left:16px; color: white;">
-        <h2>Visualization Page</h2>
+
+    <div class="lfsr">
+        <div class="bits">
+            <button class="bit-button" id="bit0" onclick="changeBit(0)"></button>
+            <button class="bit-button" id="bit1" onclick="changeBit(1)"></button>
+            <button class="bit-button" id="bit2" onclick="changeBit(2)"></button>
+            <button class="bit-button" id="bit3" onclick="changeBit(3)"></button>
+            <button class="bit-button" id="bit4" onclick="changeBit(4)"></button>
+            <button class="bit-button" id="bit5" onclick="changeBit(5)"></button>
+            <button class="bit-button" id="bit6" onclick="changeBit(6)"></button>
+            <button class="bit-button" id="bit7" onclick="changeBit(7)"></button>
+        </div>
+        <div class="taps">
+            <button class="bit-button" id="tap0" onclick="changeTap(0)"></button>
+            <button class="bit-button" id="tap1" onclick="changeTap(1)"></button>
+            <button class="bit-button" id="tap2" onclick="changeTap(2)"></button>
+            <button class="bit-button" id="tap3" onclick="changeTap(3)"></button>
+            <button class="bit-button" id="tap4" onclick="changeTap(4)"></button>
+            <button class="bit-button" id="tap5" onclick="changeTap(5)"></button>
+            <button class="bit-button" id="tap6" onclick="changeTap(6)"></button>
+            <button class="bit-button" id="tap7" onclick="changeTap(7)"></button>
+        </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/processing.js/1.4.1/processing.min.js" integrity="sha512-9Wv23xRhYo/PGUu3uEkm/IxfBtJ4EUgMNvTbOsB8NKVCKmepfTvHv0nXmvMxy/AZoKeG8EbwdJzxqJBIaKPesA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <canvas data-processing-sources="l.pde" tabindex="0" id="__processing0" width="800" height="360" style="image-rendering: -webkit-optimize-contrast !important;"></canvas>
+    <br>
+    
+    <button onclick="step()">NEXT</button>
+    <script src='./static/script/lfsr.js'></script>
+    <script src="leader-line.min.js"></script>
+</html>
