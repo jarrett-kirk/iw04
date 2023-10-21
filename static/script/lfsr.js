@@ -33,10 +33,6 @@ for (let i = 0; i < taps.length; i++)
     }
 }
 
-const startingElement = document.querySelector('bit0');
-const endingElement = document.querySelector('bit1');
-const line = new LeaderLine (startingElement, endingElement);
-
 // --------------------------------------------------------------------
 
 // update functions

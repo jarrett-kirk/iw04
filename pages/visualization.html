@@ -7,7 +7,9 @@
             href="{{ url_for('static', filename='stylesheets/main.css') }}"
         />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <script src="./node_modules/leader-line/leader-line.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script> 
+        <script data-require="jsplumb@*" data-semver="1.7.2" src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/1.4.1/jquery.jsPlumb-1.4.1-all-min.js"></script>
     </head>
     {% include "./header.html" %}
 
@@ -34,7 +36,22 @@
         </div>
     </div>
     <br>
-    
     <button onclick="step()">NEXT</button>
+    <br>
+
+    <canvas id="main" width="800" height="400"></canvas>
+
+    <script>
+        jsPlumb.ready(function () {
+            jsPlumb.connect({
+                source: "bit0",
+                target: "bit1",
+                anchors: [ "Continuous" ],
+                connector:[ "Flowchart" ],
+                paintStyle: {strokeStyle: "#000000", lineWidth:1}
+            });
+        });
+    </script>
     <script src='./static/script/lfsr.js'></script>
+    <script src='./static/script/canvas.js'></script>
 </html>
