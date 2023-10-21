@@ -7,51 +7,9 @@
             href="{{ url_for('static', filename='stylesheets/main.css') }}"
         />
         <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.23/jquery-ui.min.js"></script> 
-        <script data-require="jsplumb@*" data-semver="1.7.2" src="https://cdnjs.cloudflare.com/ajax/libs/jsPlumb/1.4.1/jquery.jsPlumb-1.4.1-all-min.js"></script>
     </head>
     {% include "./header.html" %}
 
-    <div class="lfsr">
-        <div class="bits">
-            <button class="bit-button" id="bit0" onclick="changeBit(0)"></button>
-            <button class="bit-button" id="bit1" onclick="changeBit(1)"></button>
-            <button class="bit-button" id="bit2" onclick="changeBit(2)"></button>
-            <button class="bit-button" id="bit3" onclick="changeBit(3)"></button>
-            <button class="bit-button" id="bit4" onclick="changeBit(4)"></button>
-            <button class="bit-button" id="bit5" onclick="changeBit(5)"></button>
-            <button class="bit-button" id="bit6" onclick="changeBit(6)"></button>
-            <button class="bit-button" id="bit7" onclick="changeBit(7)"></button>
-        </div>
-        <div class="taps">
-            <button class="bit-button" id="tap0" onclick="changeTap(0)"></button>
-            <button class="bit-button" id="tap1" onclick="changeTap(1)"></button>
-            <button class="bit-button" id="tap2" onclick="changeTap(2)"></button>
-            <button class="bit-button" id="tap3" onclick="changeTap(3)"></button>
-            <button class="bit-button" id="tap4" onclick="changeTap(4)"></button>
-            <button class="bit-button" id="tap5" onclick="changeTap(5)"></button>
-            <button class="bit-button" id="tap6" onclick="changeTap(6)"></button>
-            <button class="bit-button" id="tap7" onclick="changeTap(7)"></button>
-        </div>
-    </div>
-    <br>
-    <button onclick="step()">NEXT</button>
-    <br>
-
     <canvas id="main" width="800" height="400"></canvas>
-
-    <script>
-        jsPlumb.ready(function () {
-            jsPlumb.connect({
-                source: "bit0",
-                target: "bit1",
-                anchors: [ "Continuous" ],
-                connector:[ "Flowchart" ],
-                paintStyle: {strokeStyle: "#000000", lineWidth:1}
-            });
-        });
-    </script>
-    <script src='./static/script/lfsr.js'></script>
     <script src='./static/script/canvas.js'></script>
 </html>
