@@ -10,6 +10,317 @@
     </head>
     {% include "./header.html" %}
 
-    <canvas id="main" width="800" height="400"></canvas>
-    <script src='./static/script/canvas.js'></script>
+    <div class="main-container">
+    <div class="lfsr">
+
+        <div class="column-container">
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2,50 L2,25 L50,25" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2,50 L2,0" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2,50 L2,0" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M2,48 L50,48 M2,48 L2,0" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <button class="bit-button" id="bit0" onclick="changeBit(0)"></button>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="big-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <polygon points="0,0 5,5 0,10" fill="blue" />
+                        </marker>
+                    </defs>
+                    <path d="M0,25 L25,25 L25,125 L50,125" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <button class="bit-button" id="bit1" onclick="changeBit(1)"></button>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M25,50 L25,0" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+            <div class="small-container">
+                <button class="tap-button" id="tap0" onclick="changeTap(0)"></button>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48 M25,48 L25,0" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <polygon points="0,0 5,5 0,10" fill="blue" />
+                        </marker>
+                    </defs>
+                    <path d="M0,25 L50,25" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <button class="bit-button" id="bit2" onclick="changeBit(2)"></button>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <button class="tap-button" id="tap1" onclick="changeTap(1)"></button>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <polygon points="0,0 5,5 0,10" fill="blue" />
+                        </marker>
+                    </defs>
+                    <path d="M0,25 L50,25" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <button class="bit-button" id="bit3" onclick="changeBit(3)"></button>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <button class="tap-button" id="tap2" onclick="changeTap(2)"></button>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <polygon points="0,0 5,5 0,10" fill="blue" />
+                        </marker>
+                    </defs>
+                    <path d="M0,25 L50,25" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <button class="bit-button" id="bit4" onclick="changeBit(4)"></button>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <button class="tap-button" id="tap3" onclick="changeTap(3)"></button>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <polygon points="0,0 5,5 0,10" fill="blue" />
+                        </marker>
+                    </defs>
+                    <path d="M0,25 L50,25" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <button class="bit-button" id="bit5" onclick="changeBit(5)"></button>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <button class="tap-button" id="tap4" onclick="changeTap(4)"></button>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <polygon points="0,0 5,5 0,10" fill="blue" />
+                        </marker>
+                    </defs>
+                    <path d="M0,25 L50,25" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <button class="bit-button" id="bit6" onclick="changeBit(6)"></button>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <button class="tap-button" id="tap5" onclick="changeTap(5)"></button>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <defs>
+                        <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                            <polygon points="0,0 5,5 0,10" fill="blue" />
+                        </marker>
+                    </defs>
+                    <path d="M0,25 L50,25" fill="none" stroke="blue" stroke-width="2" marker-end="url(#arrowhead)" />
+                </svg>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <button class="bit-button" id="bit7" onclick="changeBit(7)"></button>
+            </div>
+            <div class="small-container"></div>
+            <div class="small-container">
+                <button class="tap-button" id="tap6" onclick="changeTap(6)"></button>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,48 L50,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+        <div class="column-container">
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0,25 L48,25 L48,50" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M48,0 L48,50" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M48,0 L48,50" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+            <div class="small-container">
+                <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M48,0 L48,48 M0,48 L48,48" fill="none" stroke="blue" stroke-width="2" />
+                </svg>
+            </div>
+        </div>
+
+    </div>
+    <button onclick="step()">NEXT</button>
+    </div>
+    <script src='./static/script/lfsr.js'></script>
 </html>

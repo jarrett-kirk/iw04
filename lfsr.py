@@ -8,10 +8,7 @@
 # citations
 # https://pine-j.medium.com/how-to-html-canvas-buttons-396267c6e5b5
 
-from functools import reduce
-from operator import xor
-
-class LFSR():
+class LFSRs():
    '''An implementation of standard linear-feedback shift register. 
       fill is the initial state as a list of 0s and 1s 
       and taps correspond to indices in the binary number represented by the register.
@@ -49,7 +46,7 @@ def main():
    """A demo of the LFSR's functionality."""
    
    # create a new register with initial state 01101000010 and tap at position 8
-   register = LFSR(fill=[0,1,1,0,1,0,0,0,0,1,0], taps=[6])
+   register = LFSRs(fill=[0,1,1,0,1,0,0,0,0,1,0], taps=[6])
 
    # advance the register 3 steps
    for i in range(3):

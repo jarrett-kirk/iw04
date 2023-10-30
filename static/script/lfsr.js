@@ -1,15 +1,15 @@
-// initializations
+// ---------------------------------------------------
+// INITIALIZATIONS
+// ---------------------------------------------------
 
-// random bits
 var bits = [];
 for (var i = 0; i < 8; i++) 
 {
     bits.push(Math.round(Math.random()));
 }
 
-// random taps
 var taps = [];
-for (var i = 0; i < 8; i++) 
+for (var i = 0; i < 7; i++) 
 {
     taps.push(Math.round(Math.random()));
 }
@@ -33,9 +33,9 @@ for (let i = 0; i < taps.length; i++)
     }
 }
 
-// --------------------------------------------------------------------
-
-// update functions
+// ---------------------------------------------------
+// UPDATE FUNCTION
+// ---------------------------------------------------
 
 function update()
 {
@@ -55,7 +55,12 @@ function update()
             document.getElementById("tap" + i).innerHTML = " ";
         }
     }
+    updateArrows();
 }
+
+// ---------------------------------------------------
+// BIT AND TAP FUNCTIONS
+// ---------------------------------------------------
 
 function changeBit(index) 
 {
@@ -85,34 +90,47 @@ function changeTap(index)
 
 function step()
 {
-    // console.logs
-    console.log("bits[] before step(): ", bits)
-
     // shift all bits and get rid of the last bit
     bits.unshift(0);
     let lastBit = bits[8];
     bits.pop();
 
-    console.log("lastBit: ", lastBit)
-    console.log("bits[] after unshift: ", bits)
-
     for (let i = 0; i < bits.length; i++) 
     {
         if (taps[i] == 1 && i == 0)
         {
-            console.log("lastBit before ^: ", lastBit)
-            console.log("bits[i] before ^: ", bits[i])
             bits[i] = (0 ^ lastBit)
-            console.log("bits[i] after ^: ", bits[i])
         }
         else if (taps[i] == 1)
         {
-            console.log("lastBit before ^: ", lastBit)
-            console.log("bits[i] before ^: ", bits[i])
             bits[i] = (bits[i] ^ lastBit)
-            console.log("bits[i] after ^: ", bits[i])
         }
     } 
-    console.log("bits[] after step(): ", bits)
     update();
 }
+
+// ---------------------------------------------------
+// ARROW FUNCTIONS
+// ---------------------------------------------------
+
+function clearArrows() {
+    const element = document.getElementById("arrow");
+    element.remove();
+  }
+  
+  function drawArrows() {
+    for (let i = 0; i < bits.length; i++) 
+    {
+      // document.getElementById("bit" + i).innerHTML
+    }
+  
+    for (let i = 0; i < taps.length; i++) 
+    {
+      // document.getElementById("tap" + i).innerHTML
+    }
+  }
+  
+  function updateArrows() {
+    clearArrows();
+    drawArrows();
+  }

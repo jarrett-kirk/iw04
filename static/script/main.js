@@ -59,5 +59,4 @@ def main():
 
 if __name__ == '__main__':
    main()
-`); 
-output.value = "Initializing...\n"; 
+`);
