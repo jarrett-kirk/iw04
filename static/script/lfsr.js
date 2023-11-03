@@ -33,6 +33,8 @@ for (let i = 0; i < taps.length; i++)
     }
 }
 
+drawArrows();
+
 // ---------------------------------------------------
 // UPDATE FUNCTION
 // ---------------------------------------------------
@@ -114,19 +116,28 @@ function step()
 // ---------------------------------------------------
 
 function clearArrows() {
-    const element = document.getElementById("arrow");
-    element.remove();
+    for (let i = 0; i < taps.length; i++) 
+    {
+        document.getElementById("tap" + i + "-arrows0").innerHTML = '';
+        document.getElementById("tap" + i + "-arrows1").innerHTML = '';
+        document.getElementById("tap" + i + "-arrows2").innerHTML = '';
+    }
   }
   
   function drawArrows() {
-    for (let i = 0; i < bits.length; i++) 
-    {
-      // document.getElementById("bit" + i).innerHTML
-    }
-  
     for (let i = 0; i < taps.length; i++) 
     {
-      // document.getElementById("tap" + i).innerHTML
+        if (taps[i] == 0) 
+        {
+            document.getElementById("tap" + i + "-arrows0").innerHTML = '<div class="small-container"><svg><use href="#arrow-right"/></svg></div><div class="small-container"></div><div class="small-container"></div><div class="small-container"><svg><use href="#line-bottom"/></svg></div>'
+            document.getElementById("tap" + i + "-arrows2").innerHTML = '<svg><use href="#line-bottom"/></svg>'
+        }
+        else
+        {
+            document.getElementById("tap" + i + "-arrows0").innerHTML = '<div class="big-container"><svg><use href="#arrow-flowchart"/></svg></div><div class="small-container"><svg><use href="#line-bottom"/></svg></div>'
+            document.getElementById("tap" + i + "-arrows1").innerHTML = '<svg><use href="#arrow-up"/></svg>'
+            document.getElementById("tap" + i + "-arrows2").innerHTML = '<svg><use href="#arrow-up-bottom"/></svg>'
+        }
     }
   }
   

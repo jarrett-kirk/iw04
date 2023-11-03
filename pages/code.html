@@ -27,11 +27,15 @@
                 <h1>Coding a LFSR in Python</h1>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             </div>
-            <div><textarea id="code" name="code"></textarea> 
+            <div class="coding-area">
+                <form action="/code" method="POST" name="code-form" id="code-form">
+                    <textarea name="user_code" id="textarea_code"></textarea>
+                    <button type="submit">Submit Code!</button>
+                </form>
             </div>
         </div>
-        
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/python/python.js"></script>
-        <script src='./static/script/main.js'></script>
+        <script src='./static/script/coding-module.js'></script>
     </body> 
 </html>

@@ -1,13 +1,12 @@
-var editor = CodeMirror.fromTextArea(document.getElementById("code"), { 
-	mode: "python",
+var editor = CodeMirror.fromTextArea(document.getElementById("textarea_code"), { 
+    mode: "python",
     theme: "monokai",
-	lineNumbers: true, 
-	indentUnit: 4, 
-	matchBrackets: true
+    lineNumbers: true, 
+    indentUnit: 4, 
+    matchBrackets: true
 }); 
 
-var output = document.getElementById("output"); 
-
+console.log("initializing");
 editor.setValue(`# Some tools to implement the LFSR Class
 from functools import reduce
 from operator import xor
@@ -27,7 +26,7 @@ class LFSR():
 # Advance the register by one step. All bits are shifted left by 1 and new bit 
 # is appended to the right tail. The new bit is a result of xor of the leaving (leftmost) bit
 # and bits located at taps before the shift.
-   
+
     def step(self):
 
 # Generate a k-bit pseudorandom number using the register.
@@ -42,21 +41,30 @@ class LFSR():
 # A demo of the LFSR's functionality.
 def main():
 
-   # create a new register with initial state 01101000010 and tap at position 8
-   register = LFSR(fill=[0,1,1,0,1,0,0,0,0,1,0], taps=[8])
+# create a new register with initial state 01101000010 and tap at position 8
+register = LFSR(fill=[0,1,1,0,1,0,0,0,0,1,0], taps=[8])
 
-   # advance the register 3 steps
-   for i in range(3):
+# advance the register 3 steps
+for i in range(3):
         register.step()
         print("Step {}\n{}".format(i+1, register))
 
-   # generate a couple of pseudorandom numbers
-   print("Pseudorandom numbers:")
-   for _ in range(3):
+# generate a couple of pseudorandom numbers
+print("Pseudorandom numbers:")
+for _ in range(3):
         print(register.rand(8))
 
 #-----------------------------------------------------------------------
 
 if __name__ == '__main__':
-   main()
+main()
 `);
+
+console.log("editor.getValue():", editor.getValue());
+
+let codeForm = document.getElementById("code-form");
+
+codeForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    console.log("editor.getValue():", editor.getValue());
+  });
