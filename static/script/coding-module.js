@@ -1,4 +1,4 @@
-var editor = CodeMirror.fromTextArea(document.getElementById("textarea_code"), { 
+var editor = CodeMirror.fromTextArea(document.getElementById("codetext"), { 
     mode: "python",
     theme: "monokai",
     lineNumbers: true, 
@@ -7,6 +7,7 @@ var editor = CodeMirror.fromTextArea(document.getElementById("textarea_code"), {
 }); 
 
 console.log("initializing");
+
 editor.setValue(`# Some tools to implement the LFSR Class
 from functools import reduce
 from operator import xor
@@ -64,7 +65,18 @@ console.log("editor.getValue():", editor.getValue());
 
 let codeForm = document.getElementById("code-form");
 
-codeForm.addEventListener("submit", (e) => {
-    e.preventDefault();
-    console.log("editor.getValue():", editor.getValue());
+$(document).ready(function() {
+    $('#code-form').on('submit',function(e){
+      $.ajax({
+        data : {
+          codetext : $('#codetext').val(),
+        },
+        type : 'POST',
+        url : '/code'
+      })
+      .done(function(data){
+        $('#output').text(data.output).show();
+      });
+      e.preventDefault();
+    });
   });
