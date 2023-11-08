@@ -11,48 +11,50 @@
     <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
         <defs>
             <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                <polygon points="0,0 5,5 0,10" fill="purple" />
+                <polygon points="0,0 5,5 0,10" fill="#EE4B2B" />
             </marker>
         </defs>
         <symbol id="arrow-right">
-            <path d="M0,25 L50,25" fill="none" stroke="purple" stroke-width="2" marker-end="url(#arrowhead)" />
+            <path d="M0,25 L50,25" fill="none" stroke="#EE4B2B" stroke-width="2" marker-end="url(#arrowhead)" />
         </symbol>
         <symbol id="arrow-up">
-            <path d="M25,50 L25,0" fill="none" stroke="purple" stroke-width="2" marker-end="url(#arrowhead)" />
+            <path d="M25,50 L25,0" fill="none" stroke="#EE4B2B" stroke-width="2" marker-end="url(#arrowhead)" />
         </symbol>
         <symbol id="arrow-up-bottom">
-            <path d="M0,48 L50,48 M25,48 L25,0" fill="none" stroke="purple" stroke-width="2" marker-end="url(#arrowhead)" />
+            <path d="M0,48 L50,48 M25,48 L25,0" fill="none" stroke="#EE4B2B" stroke-width="2" marker-end="url(#arrowhead)" />
         </symbol>
         <symbol id="line-bottom">
-            <path d="M0,48 L50,48" fill="none" stroke="purple" stroke-width="2" />
+            <path d="M0,48 L50,48" fill="none" stroke="#EE4B2B" stroke-width="2" />
         </symbol>
         <symbol id="arrow-flowchart">
-            <path d="M0,25 L25,25 L25,125 L50,125" fill="none" stroke="purple" stroke-width="2" marker-end="url(#arrowhead)" />
+            <path d="M0,25 L25,25 L25,125 L50,125" fill="none" stroke="#EE4B2B" stroke-width="2" marker-end="url(#arrowhead)" />
         </symbol>
     </svg>
     {% include "./header.html" %}
     <div class="main-container">
+        <h2>Visualizing a Galois LFSR</h2>
+        <p>Welcome to the Visualization Page, where you can explore the inner workings of Linear Feedback Shift Registers (LFSRs) interactively. This page provides an engaging learning experience to help you understand how LFSRs generate sequences and how the bits evolve as you advance the state of the LFSR.</p>
         <div class="lfsr">
 
             <div class="column-container">
                 <div class="small-container">
                     <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2,50 L2,25 L50,25" fill="none" stroke="purple" stroke-width="2" marker-end="url(#arrowhead)" />
+                        <path d="M2,50 L2,25 L50,25" fill="none" stroke="#EE4B2B" stroke-width="2" marker-end="url(#arrowhead)" />
                     </svg>
                 </div>
                 <div class="small-container">
                     <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2,50 L2,0" fill="none" stroke="purple" stroke-width="2" />
+                        <path d="M2,50 L2,0" fill="none" stroke="#EE4B2B" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="small-container">
                     <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2,50 L2,0" fill="none" stroke="purple" stroke-width="2" />
+                        <path d="M2,50 L2,0" fill="none" stroke="#EE4B2B" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="small-container">
                     <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2,48 L50,48 M2,48 L2,0" fill="none" stroke="purple" stroke-width="2" />
+                        <path d="M2,48 L50,48 M2,48 L2,0" fill="none" stroke="#EE4B2B" stroke-width="2" />
                     </svg>
                 </div>
             </div>
@@ -169,27 +171,36 @@
             <div class="column-container">
                 <div class="small-container">
                     <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M0,25 L48,25 L48,50" fill="none" stroke="purple" stroke-width="2" />
+                        <path d="M0,25 L48,25 L48,50" fill="none" stroke="#EE4B2B" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="small-container">
                     <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M48,0 L48,50" fill="none" stroke="purple" stroke-width="2" />
+                        <path d="M48,0 L48,50" fill="none" stroke="#EE4B2B" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="small-container">
                     <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M48,0 L48,50" fill="none" stroke="purple" stroke-width="2" />
+                        <path d="M48,0 L48,50" fill="none" stroke="#EE4B2B" stroke-width="2" />
                     </svg>
                 </div>
                 <div class="small-container">
                     <svg class="arrow-svg" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M48,0 L48,48 M0,48 L48,48" fill="none" stroke="purple" stroke-width="2" />
+                        <path d="M48,0 L48,48 M0,48 L48,48" fill="none" stroke="#EE4B2B" stroke-width="2" />
                     </svg>
                 </div>
             </div>
         </div>
         <button class="next-button" onclick="step()">NEXT</button>
+        <h2>Here is how to use the visualization above:</h2>
+        <h4>Bit Manipulation: </h4>
+        <p>Click on any bit within the LFSR to switch it between a 1 and a 0. This feature allows you to observe how changing individual bit values impacts the LFSR's sequence.</p>
+        <h4>Taps Control: </h4>
+        <p>Turn the taps on or off with a simple click. Taps play a crucial role in LFSRs by determining which bits participate in the XOR operation to generate the next bit. Activating or deactivating taps will show you their influence on the LFSR's behavior.</p>
+        <h4>Advance State: </h4>
+        <p>Click the "NEXT" button to advance the state of the LFSR. Watch as the bits shift to the right, and the next bit is calculated. Arrows will guide you through the process, indicating where and how the XOR operation occurs.</p>
+        <h4>Understanding XOR Operation: </h4>
+        <p>Follow the arrows to see if and where the current bit is XORed with other bits in the LFSR. This visual representation helps you grasp the concept of feedback and how it influences the output.</p>
     </div>
     <script src='./static/script/lfsr.js'></script>
 </html>

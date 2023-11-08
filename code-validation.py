@@ -1,20 +1,25 @@
-from RestrictedPython import compile_restricted
-from RestrictedPython.PrintCollector import PrintCollector
+import subprocess
 
+user_code = """
+def main():
+    return 289
 
-_print_ = PrintCollector
-
-code_string = """
-print('Hello outer world!')
-results = printed
+main()
 """
 
-# Compile and excecute restricted code:
-compiled_code = compile_restricted(code_string, '<string>', 'exec')
-exec(compiled_code)
+result = subprocess.check_output(["python", "-c", user_code])
 
-# Now we have `results` available as a global:
-print(results.split('\n')) # convert string into list of lines
+from RestrictedPython import compile_restricted
+from RestrictedPython import safe_globals
 
-# We should get:
-# >>> ['Hello inner world!', 'Hello outer world!', '', '']
+source_code = """
+
+def main():
+    def example(x, y):
+        return x + y
+    return example(4, 6)
+"""
+loc = {}
+byte_code = compile_restricted(source_code, '<inline>', 'exec')
+exec(byte_code, safe_globals, loc)
+print(loc['main']())
