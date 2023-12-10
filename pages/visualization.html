@@ -33,8 +33,12 @@
     </svg>
     {% include "./header.html" %}
     <div class="main-container">
-        <h2>Visualizing a Galois LFSR</h2>
-        <p>Welcome to the Visualization Page, where you can explore the inner workings of Linear Feedback Shift Registers (LFSRs) interactively. This page provides an engaging learning experience to help you understand how LFSRs generate sequences and how the bits evolve as you advance the state of the LFSR.</p>
+        <div style="align-items: right;">
+            <h2 style="align-self: left;">What is a Galois LFSR?</h2>
+            <p>A Galois Linear Feedback Shift Register is a psuedo-random number generator, or in other words, it creates a number that appears random. This is process has two main components: "bits" and "taps". First, we start with a random sequence of bits, in this visualization, 8 bits. Next, we randomly choose our taps. These taps are postioned along the 8-bit sequence and do not change during the process. Now, with these two things, we can preform a "step". First, the last bit is sent out and becomes a part of the output. Next, all the bits are shifted to the right, and the first bit becomes the output bit. Here is where the taps come in. For any position along the sequence that has a tap, that position will be XORed with the output bit after the shift. In this visualization, arrows are provided to make following this process easier. If two arrows going into an "X", those values are XORed together.</p>
+        </div>
+
+        <!------------------------- LFSR STUFF -------------------------->
         <div class="lfsr">
 
             <div class="column-container">
@@ -192,25 +196,19 @@
                 </div>
             </div>
         </div>
-        <button class="next-button" onclick="step()">NEXT</button>
+        <!------------------------- LFSR STUFF -------------------------->
+
+        <div style="align-items: right;">
+            <h2 style="align-self: left;">How Do I use the Visualization?</h2>
+            <p>Click on a bit or a tap to change its state. Click "Next" to advance the Galois LFSR one state. You can refresh the page to reset the ouptut bits. Beside the "Submit" button, you can fill in the next LFSR state and it will tell you if you were right or wrong.</p>
+        </div>
+        <button class="next-button" onclick="step()" style="justify-self: right;">Next</button>
+        <p id="output-bits" style="font-size: larger;">Ouput: </p>
 
         <form id="vis-form">
             <textarea id="visanswer"></textarea>
-            <button type="submit">Submit Answer!</button>
+            <button class="next-button" type="submit">Submit</button>
         </form>
-
-        <div id="output"></div>
-        <div id="output-bits"></div>
-
-        <h2>Here is how to use the visualization above:</h2>
-        <h4>Bit Manipulation: </h4>
-        <p>Click on any bit within the LFSR to switch it between a 1 and a 0. This feature allows you to observe how changing individual bit values impacts the LFSR's sequence.</p>
-        <h4>Taps Control: </h4>
-        <p>Turn the taps on or off with a simple click. Taps play a crucial role in LFSRs by determining which bits participate in the XOR operation to generate the next bit. Activating or deactivating taps will show you their influence on the LFSR's behavior.</p>
-        <h4>Advance State: </h4>
-        <p>Click the "NEXT" button to advance the state of the LFSR. Watch as the bits shift to the right, and the next bit is calculated. Arrows will guide you through the process, indicating where and how the XOR operation occurs.</p>
-        <h4>Understanding XOR Operation: </h4>
-        <p>Follow the arrows to see if and where the current bit is XORed with other bits in the LFSR. This visual representation helps you grasp the concept of feedback and how it influences the output.</p>
-    </div>
+        <p id="output"></p>
     <script src='./static/script/lfsr.js'></script>
 </html>
