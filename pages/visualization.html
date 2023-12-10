@@ -198,10 +198,6 @@
         </div>
         <!------------------------- LFSR STUFF -------------------------->
 
-        <div style="align-items: right;">
-            <h2 style="align-self: left;">How Do I use the Visualization?</h2>
-            <p>Click on a bit or a tap to change its state. Click "Next" to advance the Galois LFSR one state. You can refresh the page to reset the ouptut bits. Beside the "Submit" button, you can fill in the next LFSR state and it will tell you if you were right or wrong.</p>
-        </div>
         <button class="next-button" onclick="step()" style="justify-self: right;">Next</button>
         <p id="output-bits" style="font-size: larger;">Ouput: </p>
 
@@ -210,5 +206,10 @@
             <button class="next-button" type="submit">Submit</button>
         </form>
         <p id="output"></p>
+
+        <div style="align-items: right;">
+            <h2 style="align-self: left;">How Do I use the Visualization?</h2>
+            <p>Click on a bit or a tap to change its state. Click "Next" to advance the Galois LFSR one state. You can refresh the page to reset the ouptut bits. Beside the "Submit" button, you can fill in the next LFSR state and it will tell you if you were right or wrong.</p>
+        </div>
     <script src='./static/script/lfsr.js'></script>
 </html>
