@@ -6,14 +6,8 @@
 #-----------------------------------------------------------------------
 
 import flask
-import database
 import lfsr
-import subprocess
-from RestrictedPython import compile_restricted
-from RestrictedPython import safe_globals
-from RestrictedPython.PrintCollector import PrintCollector
-
-_print_ = PrintCollector
+import testLFSR
 
 #-----------------------------------------------------------------------
 
@@ -31,8 +25,18 @@ def home():
 
 #-----------------------------------------------------------------------
 
-@app.route('/visualization', methods=['GET'])
+@app.route('/visualization', methods=['GET', 'POST'])
 def visual():
+
+    if flask.request.method == "POST":
+        visanswer = flask.request.form.get('visanswer')
+        solution = flask.request.form.get('solution')
+        print(solution)
+        if visanswer == solution:
+            result = 'passed, congratulations!'
+        else:
+            result = 'wrong, try again'
+        return flask.jsonify({'output':result})
 
     html_code = flask.render_template('visualization.html')
     response = flask.make_response(html_code)
@@ -46,15 +50,16 @@ def coding():
     user_code = ''
     if flask.request.method == "POST":
         user_code = flask.request.form['codetext']
-        result = subprocess.run(["python", "-c", user_code], capture_output = True, text = True)
-        print(result.stdout)
-        return flask.jsonify({'output':result.stdout})
+        print("user_code: ", user_code)
+        passed_int, result, err = testLFSR.test_user_code(user_code)
+        if passed_int == 1:
+            passed = "ALL TESTS PASSED! CONGRATULATIONS!"
+        else:
+            passed = "Test Failed, See Error Log"
+
+        print(passed)
+        return flask.jsonify({'passed':passed, 'output':result, 'error':err})
 
     html_code = flask.render_template('code.html')
     response = flask.make_response(html_code)
     return response
-
-def my_exec(code):
-    exec('global i; i = %s' % code)
-    global i
-    return i

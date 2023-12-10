@@ -1,3 +1,5 @@
+// citations: https://www.tutorialspoint.com/how-to-display-a-dialog-box-on-the-page
+
 var editor = CodeMirror.fromTextArea(document.getElementById("codetext"), { 
     mode: "python",
     theme: "monokai",
@@ -8,57 +10,42 @@ var editor = CodeMirror.fromTextArea(document.getElementById("codetext"), {
 
 console.log("initializing");
 
-editor.setValue(`# Some tools to implement the LFSR Class
-from functools import reduce
-from operator import xor
+editor.setValue(
+  `class LFSR():
 
-# An implementation of standard linear-feedback shift register. 
-# fill is the initial state as a list of 0s and 1s 
-# and taps correspond to indices in the binary number represented by the register.
-# Bits on taps influence the next state. Note that taps are indices in binary notation,
-# i.e. read from right to left. Example: taps = [3] on a nine-bit register 
-# is located on (9-1)-3 = 5th position in the array.
+    # Initialize an lfsr with three arrays: bits, taps, and an empty output array.
+    def __init__(self, bits, taps):
+        self.bits = bits
+        self.taps = taps
+        self.output = []
 
-class LFSR():
-
-    def __init__(self, fill, taps):
-
-
-# Advance the register by one step. All bits are shifted left by 1 and new bit 
-# is appended to the right tail. The new bit is a result of xor of the leaving (leftmost) bit
-# and bits located at taps before the shift.
-
+    # Perform one step through the lfsr and return the output bit. A good approach would be to
+    # first shift the bits, and then if the output bit is 1, XOR all the bits with a tap position
+    # whos value is 1
     def step(self):
+        return 0
 
-# Generate a k-bit pseudorandom number using the register.
-    def rand(self, k):
+    # Takes in an integer k, and returns an array of size k. The contents of the array should be
+    # produced by using the step() function.
+    def generate(self, k):
+        return 0
 
+    # Take the current state of the LFSR and perform step() until it comes back around to the
+    # original state. Return the number of steps it required.
+    def cycle(self):
+        return 0
 
-    def __str__(self):
-        return "<LFSR: {}, taps: {}>".format(''.join(map(str,self.register)), self.taps)
+# ----- Example Testing ----- #
 
-#-----------------------------------------------------------------------
+# Initialize an lfsr.
+lfsr = LFSR([0, 0, 0, 1], [1, 0, 0, 1])
 
-# A demo of the LFSR's functionality.
-def main():
+# Test step and print bits before and after to the console.
+print("lfsr.bits before step: ", lfsr.bits)
+lfsr.step()
+print("lfsr.bits after step: ", lfsr.bits)
 
-# create a new register with initial state 01101000010 and tap at position 8
-register = LFSR(fill=[0,1,1,0,1,0,0,0,0,1,0], taps=[8])
-
-# advance the register 3 steps
-for i in range(3):
-        register.step()
-        print("Step {}\n{}".format(i+1, register))
-
-# generate a couple of pseudorandom numbers
-print("Pseudorandom numbers:")
-for _ in range(3):
-        print(register.rand(8))
-
-#-----------------------------------------------------------------------
-
-if __name__ == '__main__':
-main()
+# ----- Perform other tests. ----- #
 `);
 
 console.log("editor.getValue():", editor.getValue());
@@ -69,14 +56,29 @@ $(document).ready(function() {
     $('#code-form').on('submit',function(e){
       $.ajax({
         data : {
-          codetext : $('#codetext').val(),
+          codetext : editor.getValue(),
         },
         type : 'POST',
         url : '/code'
       })
       .done(function(data){
+        $('#passed').text(data.passed).show();
         $('#output').text(data.output).show();
+        $('#error').text(data.error).show();
       });
       e.preventDefault();
+      console.log(codetext)
     });
   });
+
+const openButton = document.getElementById('open-dialog-btn');
+const dialog = document.getElementById('my-dialog');
+const closeButton = document.getElementById('close-dialog');
+
+openButton.addEventListener('click', () => {
+    dialog.showModal();
+});
+
+closeButton.addEventListener('click', () => {
+    dialog.close();
+});

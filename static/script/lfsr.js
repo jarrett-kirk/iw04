@@ -97,18 +97,20 @@ function step()
     let lastBit = bits[8];
     bits.pop();
 
-    for (let i = 0; i < bits.length; i++) 
+    bits[0] = lastBit
+    for (let i = 1; i < bits.length; i++) 
     {
-        if (taps[i] == 1 && i == 0)
+        if (taps[i - 1] == 1 && i == 0)
         {
             bits[i] = (0 ^ lastBit)
         }
-        else if (taps[i] == 1)
+        else if (taps[i - 1] == 1)
         {
             bits[i] = (bits[i] ^ lastBit)
         }
     } 
     update();
+    document.getElementById("output-bits").innerHTML += lastBit;
 }
 
 // ---------------------------------------------------
@@ -145,3 +147,22 @@ function clearArrows() {
     clearArrows();
     drawArrows();
   }
+
+let visForm = document.getElementById("vis-form");
+
+$(document).ready(function() {
+    $('#vis-form').on('submit',function(e){
+    $.ajax({
+        data : {
+        visanswer : $('#visanswer').val(),
+        solution : bits.join(''),
+        },
+        type : 'POST',
+        url : '/visualization'
+    })
+    .done(function(data){
+        $('#output').text(data.output).show();
+    });
+    e.preventDefault();
+    });
+});

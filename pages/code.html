@@ -26,18 +26,36 @@
         <div class="container">
             <div class="text-coding"> 
                 <h1>Coding a LFSR in Python</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>The Galois Linear Feedback Shift Register (LFSR) implementation is encapsulated in a Python class named LFSR. This class simulates the behavior of a Galois LFSR, a type of shift register with feedback logic commonly used in generating pseudorandom sequences.</p>
+                <h2>Class Initialization and Functions:</h2>
+                <p>Upon instantiation, the LFSR class requires two parameters: bits and taps. The bits parameter represents the initial state of the LFSR, specified as an array of binary digits (0 or 1). The taps parameter defines the positions in the state array to which feedback is applied.<br>
+                Stepping Through the LFSR:<br>
+                The step method advances the LFSR by one step. During each step, the state is shifted, and if the output bit is 1, an XOR operation is performed with the bits corresponding to the specified tap positions.<br>
+                Generating a Sequence:<br>
+                The generate method generates a sequence of bits by repeatedly calling the step function. The length of the generated sequence is determined by the parameter k.<br>
+                Cycling Through States:<br>
+                The cycle method takes the current state of the LFSR and iteratively calls the step function until the LFSR returns to its original state. The method returns the number of steps required to complete a full cycle.</p><br>
             </div>
             <div class="coding-area">
                 <form id="code-form">
                     <textarea id="codetext"></textarea>
-                    <button type="submit">Submit Code!</button>
+                    <button type="submit" id="open-dialog-btn">Submit Code!</button>
                 </form>
             </div>
         </div>
 
+        <dialog id="my-dialog">
+            <h2>Tests Passed:</h2>
+            <div class="code-output" id="passed" style="padding: 30px; color: black;"></div>
+            <button id="close-dialog">Close</button>
+        </dialog>
+
+
         <h2 style="padding: 30px;">CONSOLE</h2>
         <div class="code-output" id="output" style="padding: 30px;"></div>
+
+        <h2 style="padding: 30px;">ERRORS</h2>
+        <div class="code-output" id="error" style="padding: 30px;"></div>
 
         <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/mode/python/python.js"></script>
         <script src='./static/script/coding-module.js'></script>
