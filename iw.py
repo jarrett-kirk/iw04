@@ -32,6 +32,7 @@ def visual():
         visanswer = flask.request.form.get('visanswer')
         solution = flask.request.form.get('solution')
         print(solution)
+        print(visanswer)
         if visanswer == solution:
             result = 'passed, congratulations!'
         else:

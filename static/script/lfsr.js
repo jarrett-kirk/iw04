@@ -3,6 +3,8 @@
 // ---------------------------------------------------
 
 var bits = [];
+var bits_copy = [];
+
 for (var i = 0; i < 8; i++) 
 {
     bits.push(Math.round(Math.random()));
@@ -57,6 +59,7 @@ function update()
             document.getElementById("tap" + i).innerHTML = " ";
         }
     }
+    bits_copy = bits;
     updateArrows();
 }
 
@@ -113,6 +116,29 @@ function step()
     document.getElementById("output-bits").innerHTML += lastBit;
 }
 
+function step_copy(bit_list)
+{
+    // shift all bits and get rid of the last bit
+    bit_list.unshift(0);
+    let lastBit = bit_list[8];
+    bit_list.pop();
+
+    bit_list[0] = lastBit
+    for (let i = 1; i < bit_list.length; i++) 
+    {
+        if (taps[i - 1] == 1 && i == 0)
+        {
+            bit_list[i] = (0 ^ lastBit)
+        }
+        else if (taps[i - 1] == 1)
+        {
+            bit_list[i] = (bit_list[i] ^ lastBit)
+        }
+    }
+    console.log("in here")
+    return bits_copy.join('')
+}
+
 // ---------------------------------------------------
 // ARROW FUNCTIONS
 // ---------------------------------------------------
@@ -152,10 +178,12 @@ let visForm = document.getElementById("vis-form");
 
 $(document).ready(function() {
     $('#vis-form').on('submit',function(e){
+        sol = step_copy(bits_copy)
+        bits_copy = bits
     $.ajax({
         data : {
         visanswer : $('#visanswer').val(),
-        solution : bits.join(''),
+        solution : sol,
         },
         type : 'POST',
         url : '/visualization'
