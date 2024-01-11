@@ -5,9 +5,6 @@
 # Author: Jarrett Kirk
 #-----------------------------------------------------------------------
 
-# citations
-# https://pine-j.medium.com/how-to-html-canvas-buttons-396267c6e5b5
-
 from PIL import Image
 
 class myLFSR():
